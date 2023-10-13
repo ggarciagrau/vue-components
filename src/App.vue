@@ -1,7 +1,8 @@
 <script setup>
-import { shallowRef } from 'vue';
-import HelloWorld from './components/HelloWorld.vue'
+import { shallowRef, defineAsyncComponent } from 'vue';
 import ByeWorld from './components/ByeWorld.vue'
+
+const HelloWorld = defineAsyncComponent(() => import('./components/AsyncHelloWorld.vue'))
 
 const dynamicComponent = shallowRef(HelloWorld)
 
