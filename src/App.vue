@@ -1,6 +1,19 @@
 <script setup>
+import { shallowRef } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import ByeWorld from './components/ByeWorld.vue'
+
+const dynamicComponent = shallowRef(HelloWorld)
+
+const switchComponent = () => {
+  if (dynamicComponent.value == HelloWorld) {
+    dynamicComponent.value = ByeWorld
+    return
+  }
+
+  dynamicComponent.value = HelloWorld
+}
+
 </script>
 
 <template>
@@ -8,40 +21,13 @@ import TheWelcome from './components/TheWelcome.vue'
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <component :is="dynamicComponent" />
+      <button v-on:click="switchComponent">Switch component</button>
     </div>
   </header>
 
   <main>
-    <TheWelcome />
   </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<style scoped></style>
