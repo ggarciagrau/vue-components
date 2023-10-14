@@ -1,34 +1,40 @@
 <script setup>
-import { shallowRef, defineAsyncComponent } from 'vue';
-import ByeWorld from './components/ByeWorld.vue'
+import { ref } from 'vue';
 
-const HelloWorld = defineAsyncComponent(() => import('./components/AsyncHelloWorld.vue'))
+import MainMenu from './components/MainMenu.vue'
 
-const dynamicComponent = shallowRef(HelloWorld)
+const menuIsVissible = ref(true);
 
-const switchComponent = () => {
-  if (dynamicComponent.value == HelloWorld) {
-    dynamicComponent.value = ByeWorld
+const displayMenu = () => {
+  if (menuIsVissible.value) {
+    menuIsVissible.value = false
     return
   }
 
-  dynamicComponent.value = HelloWorld
+  menuIsVissible.value = true
 }
 
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <component :is="dynamicComponent" />
-      <button v-on:click="switchComponent">Switch component</button>
-    </div>
-  </header>
-
-  <main>
-  </main>
+  <button @click="displayMenu">Menu</button>
+  <transition name="fade">
+    <MainMenu v-show="menuIsVissible" />
+  </transition>
 </template>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-active {
+  transition: opacity 0.5s ease;
+  border: 1px solid red;
+}
+
+.fade-leave-active {
+  transition: opacity 3s ease;
+  background-color: purple;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+</style>
