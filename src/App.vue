@@ -1,40 +1,46 @@
 <script setup>
 import { ref } from 'vue';
 
-import MainMenu from './components/MainMenu.vue'
 
-const menuIsVissible = ref(true);
+const textIsVissible = ref(true);
 
-const displayMenu = () => {
-  if (menuIsVissible.value) {
-    menuIsVissible.value = false
+const displayText = () => {
+  if (textIsVissible.value) {
+    textIsVissible.value = false
     return
   }
 
-  menuIsVissible.value = true
+  textIsVissible.value = true
 }
-
 </script>
 
 <template>
-  <button @click="displayMenu">Menu</button>
-  <transition name="fade">
-    <MainMenu v-show="menuIsVissible" />
+  <button @click="displayText">Text</button>
+  <transition name="bounce">
+    <p v-show="textIsVissible" style="text-align: center;">Hello world</p>
   </transition>
 </template>
 
 <style scoped>
-.fade-enter-active {
-  transition: opacity 0.5s ease;
-  border: 1px solid red;
+
+.bounce-enter-active {
+  animation: bounce 1s;
 }
 
-.fade-leave-active {
-  transition: opacity 3s ease;
-  background-color: purple;
+.bounce-leave-active {
+  animation: bounce 1s reverse;
 }
 
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+    color: red;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
