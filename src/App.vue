@@ -1,10 +1,13 @@
 <script setup>
-import TeleportedModal from './components/TeleportedModal.vue';
+import { ref } from 'vue';
+import ComponentLifecycle from './components/ComponentLifecycle.vue';
+
+const isVisible = ref(true);
 </script>
 
 <template>
-  <TeleportedModal />
+  <button @click="isVisible = !isVisible">Switch visibility</button>
+  <ComponentLifecycle v-if="isVisible"/>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
