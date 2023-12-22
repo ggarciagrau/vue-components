@@ -1,13 +1,10 @@
 <script setup>
-import { ref } from 'vue';
-import ComponentLifecycle from './components/ComponentLifecycle.vue';
+import MixinComponent from './components/MixinComponent.vue';
 
-const isVisible = ref(true);
 </script>
 
 <template>
-  <button @click="isVisible = !isVisible">Switch visibility</button>
-  <ComponentLifecycle v-if="isVisible"/>
+  <MixinComponent />
 </template>
 
 <style scoped></style>
