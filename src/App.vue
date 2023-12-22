@@ -1,10 +1,9 @@
 <script setup>
-import MixinComponent from './components/MixinComponent.vue';
-
+import FirstCompositionComponent from './components/FirstCompositionComponent.vue'
 </script>
 
 <template>
-  <MixinComponent />
+  <FirstCompositionComponent />
 </template>
 
 <style scoped></style>
