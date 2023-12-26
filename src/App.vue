@@ -1,9 +1,9 @@
 <script setup>
-import ReactiveAndRefVariables from './components/ReactiveAndRefVariables.vue'
+import WatchersAsChangeListener from './components/WatchersAsChangeListener.vue'
 </script>
 
 <template>
-  <ReactiveAndRefVariables />
+  <WatchersAsChangeListener />
 </template>
 
 <style scoped></style>
