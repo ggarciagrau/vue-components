@@ -1,9 +1,9 @@
 <script setup>
-import FirstCompositionComponent from './components/FirstCompositionComponent.vue'
+import ReactiveAndRefVariables from './components/ReactiveAndRefVariables.vue'
 </script>
 
 <template>
-  <FirstCompositionComponent />
+  <ReactiveAndRefVariables />
 </template>
 
 <style scoped></style>
