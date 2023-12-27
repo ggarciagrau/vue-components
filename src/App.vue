@@ -1,16 +1,11 @@
 <script setup>
-import { provide } from 'vue';
-import ProvideInjectExample from './components/ProvideInjectExample.vue'
 
-provide("user", {
-  name: "Roberto",
-  lastname: "Martínez"
-})
+import TemplateRefs from './components/TemplateRefs.vue'
 
 </script>
 
 <template>
-  <ProvideInjectExample />
+  <TemplateRefs />
 </template>
 
 <style scoped></style>
