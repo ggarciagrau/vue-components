@@ -1,9 +1,16 @@
 <script setup>
-import ComponentWithContext from './components/ComponentWithContext.vue'
+import { provide } from 'vue';
+import ProvideInjectExample from './components/ProvideInjectExample.vue'
+
+provide("user", {
+  name: "Roberto",
+  lastname: "Martínez"
+})
+
 </script>
 
 <template>
-  <ComponentWithContext name="Antonio" animal="Budgie" />
+  <ProvideInjectExample />
 </template>
 
 <style scoped></style>
