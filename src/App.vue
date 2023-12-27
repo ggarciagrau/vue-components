@@ -1,9 +1,9 @@
 <script setup>
-import WatchersAsChangeListener from './components/WatchersAsChangeListener.vue'
+import ComputedVariables from './components/ComputedVariables.vue'
 </script>
 
 <template>
-  <WatchersAsChangeListener />
+  <ComputedVariables />
 </template>
 
 <style scoped></style>
