@@ -1,9 +1,9 @@
 <script setup>
-import ComputedVariables from './components/ComputedVariables.vue'
+import ComponentWithProps from './components/ComponentWithProps.vue'
 </script>
 
 <template>
-  <ComputedVariables />
+  <ComponentWithProps name="Antonio" />
 </template>
 
 <style scoped></style>
