@@ -1,9 +1,9 @@
 <script setup>
-import ComponentWithProps from './components/ComponentWithProps.vue'
+import ComponentWithContext from './components/ComponentWithContext.vue'
 </script>
 
 <template>
-  <ComponentWithProps name="Antonio" />
+  <ComponentWithContext name="Antonio" animal="Budgie" />
 </template>
 
 <style scoped></style>
