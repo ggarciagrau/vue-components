@@ -1,11 +1,11 @@
 <script setup>
 
-import TemplateRefs from './components/TemplateRefs.vue'
+import ScriptSetup from './components/ScriptSetup.vue'
 
 </script>
 
 <template>
-  <TemplateRefs />
+  <ScriptSetup name="Juan" />
 </template>
 
 <style scoped></style>
